@@ -1,5 +1,5 @@
 from distutils.log import debug
-from flask import render_template, Flask, request
+from flask import render_template, Flask, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -7,15 +7,14 @@ app = Flask(__name__)
 @app.route('/dashboard')
 def dashboard():
     return render_template('index.html')
-    # return "<p>hehe</p>"
 
 @app.route('/signup')
 def signup():
-    return "<h1>signup</h1>"
+    return render_template('signup.html')
 
 @app.route('/login')
 def login():
-    return "<h1>login</h1>"
+    return render_template('login.html')
 
 @app.route('/logout')
 def logout():
@@ -25,4 +24,5 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
+     
      
